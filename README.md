@@ -80,8 +80,8 @@ Or open directly in Google Colab by clicking the notebook file in the repo and s
 
 ## Team
 
-| Name | Institution |
-|--|--|
+| Name | 
+|----|
 | Kiran Thamida |
 | Efrata Getachew Bogale | 
 | Saron Nigussie | 
