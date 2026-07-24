@@ -82,11 +82,11 @@ Or open directly in Google Colab by clicking the notebook file in the repo and s
 
 | Name | Institution |
 |--|--|
-| Kiran Thamida, 
-| Fariha Tasnim Amir | AI4ALL Ignite |
-| Saron Nigussie | AI4ALL Ignite |
-| Efrata Getachew Bogale | Bryn Mawr College |
-| Abdul Ahad | AI4ALL Ignite |
+| Kiran Thamida |
+| Efrata Getachew Bogale | 
+| Saron Nigussie | 
+| Abdul Ahad | 
+| Fariha Tasnim Amir | 
 
 ## Citations
 
