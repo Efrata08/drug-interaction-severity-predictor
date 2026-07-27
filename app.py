@@ -14,7 +14,7 @@ st.set_page_config(
 
 # ── Load model and encoders ───────────────────────────────────
 import os
-base_dir = os.path.dirname(os.path.abspath(__file__))
+base_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'models')
 
 @st.cache_resource
 def load_model():
