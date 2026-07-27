@@ -14,23 +14,24 @@ st.set_page_config(
 
 # ── Load model and encoders ───────────────────────────────────
 import os
-base_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'models')
+root_dir = os.path.dirname(os.path.abspath(__file__))
+models_dir = os.path.join(root_dir, 'models')
 
 @st.cache_resource
 def load_model():
-    model = joblib.load(os.path.join(base_dir, 'drug_interaction_model.pkl'))
-    le_level = joblib.load(os.path.join(base_dir, 'label_encoder.pkl'))
-    le_a_atc = joblib.load(os.path.join(base_dir, 'le_a_atc.pkl'))
-    le_b_atc = joblib.load(os.path.join(base_dir, 'le_b_atc.pkl'))
-    le_a_groups = joblib.load(os.path.join(base_dir, 'le_a_groups.pkl'))
-    le_b_groups = joblib.load(os.path.join(base_dir, 'le_b_groups.pkl'))
-    tfidf_a = joblib.load(os.path.join(base_dir, 'tfidf_a.pkl'))
-    tfidf_b = joblib.load(os.path.join(base_dir, 'tfidf_b.pkl'))
+    model = joblib.load(os.path.join(models_dir, 'drug_interaction_model.pkl'))
+    le_level = joblib.load(os.path.join(models_dir, 'label_encoder.pkl'))
+    le_a_atc = joblib.load(os.path.join(models_dir, 'le_a_atc.pkl'))
+    le_b_atc = joblib.load(os.path.join(models_dir, 'le_b_atc.pkl'))
+    le_a_groups = joblib.load(os.path.join(models_dir, 'le_a_groups.pkl'))
+    le_b_groups = joblib.load(os.path.join(models_dir, 'le_b_groups.pkl'))
+    tfidf_a = joblib.load(os.path.join(models_dir, 'tfidf_a.pkl'))
+    tfidf_b = joblib.load(os.path.join(models_dir, 'tfidf_b.pkl'))
     return model, le_level, le_a_atc, le_b_atc, le_a_groups, le_b_groups, tfidf_a, tfidf_b
 
 @st.cache_data
 def load_drugbank():
-    return pd.read_csv(os.path.join(base_dir, 'drugbank_lookup.csv'))
+    return pd.read_csv(os.path.join(root_dir, 'drugbank_lookup.csv'))
 
 model, le_level, le_a_atc, le_b_atc, le_a_groups, le_b_groups, tfidf_a, tfidf_b = load_model()
 drugbank = load_drugbank()
