@@ -106,18 +106,6 @@ html, body, [class*="css"] { font-family: 'Inter', sans-serif; }
 }
 .chip-hot { background: #fef2f2; color: #991b1b; }
 
-/* SEVERITY SCALE */
-.scale { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 6px;
-         padding: 0 1.35rem 1.2rem; background: #fff; }
-.sc { border-radius: 8px; padding: 8px; text-align: center; border: 1px solid; }
-.sc-minor { background: #f0fdf4; border-color: #bbf7d0; }
-.sc-moderate { background: #fffbeb; border-color: #fde68a; }
-.sc-major { background: #fef2f2; border-color: #fca5a5; }
-.sc-dot { width: 6px; height: 6px; border-radius: 50%; margin: 0 auto 5px; }
-.sc-name { font-size: 12.5px; font-weight: 600; margin-bottom: 2px; }
-.sc-desc { font-size: 10px; color: #94a3b8; }
-.sc-on { outline: 2px solid #1a3a5c; outline-offset: 2px; }
-
 /* STATS */
 .stats { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 14px;
          display: grid; grid-template-columns: repeat(4,1fr); margin-top: 1.25rem; }
@@ -199,7 +187,19 @@ div[data-baseweb="select"] > div:focus-within {
     line-height: 1.55; margin-top: .7rem;
 }
 .lowconf b { color: #7c2d12; }
+
+/* alerts — styled by hand so a dark browser theme cannot wash them out */
+.alert {
+    border-radius: 10px; padding: .85rem 1.1rem;
+    font-size: 13px; line-height: 1.55; margin-top: 1rem;
+    display: flex; align-items: flex-start; gap: 10px;
+}
+.alert-warn { background: #fffbeb; border: 1px solid #fcd34d; color: #78350f !important; }
+.alert-err  { background: #fef2f2; border: 1px solid #fca5a5; color: #7f1d1d !important; }
+.alert b { font-weight: 600; }
+.alert span { color: inherit !important; }
 </style>
+
 
 """, unsafe_allow_html=True)
 
@@ -346,7 +346,7 @@ if choice == "All categories":
 else:
     pool = drugbank[drugbank['categories'].apply(lambda l: choice in l)]
 
-st.caption(f"{len(pool):,} medications available in this category")
+st.markdown(f'<div style="font-size:12px;color:#64748b;margin:-.3rem 0 .9rem;">{len(pool):,} medications available</div>', unsafe_allow_html=True)
 
 # ── Drug pickers ──────────────────────────────────────────────
 options = pool['display'].tolist()
@@ -370,15 +370,15 @@ go = st.button("℞   Analyze interaction")
 # ── Result ────────────────────────────────────────────────────
 if go:
     if not a_disp or not b_disp:
-        st.warning("Please select both medications.")
+        st.markdown('<div class="alert alert-warn"><span>⚠️</span><span><b>Select both medications.</b> Choose one in each dropdown, then run the analysis.</span></div>', unsafe_allow_html=True)
     elif a_disp == b_disp:
-        st.warning("Please select two different medications.")
+        st.markdown('<div class="alert alert-warn"><span>⚠️</span><span><b>Choose two different medications.</b> A drug cannot interact with itself.</span></div>', unsafe_allow_html=True)
     else:
         with st.spinner("Analyzing…"):
             pred, conf, detail = predict(name_of[a_disp], name_of[b_disp])
 
         if pred is None:
-            st.error("Could not build features for that pair.")
+            st.markdown('<div class="alert alert-err"><span>⚠️</span><span><b>Could not build features for that pair.</b> One of these drugs is missing pharmacological data.</span></div>', unsafe_allow_html=True)
         else:
             cfg = {
                 'Major':    ('⚠️', 'Major interaction detected',
@@ -391,9 +391,6 @@ if go:
                              'Low risk — generally manageable with standard care.', 'minor'),
             }[pred]
             icon, label, sub, k = cfg
-            on = {'minor': '', 'moderate': '', 'major': ''}
-            on[k] = 'sc-on'
-
             # why-panel content
             if detail['shared']:
                 chips = ' '.join(f'<span class="chip chip-hot">{e}</span>'
@@ -437,23 +434,6 @@ if go:
                 <div class="why-lbl">WHY THIS PREDICTION</div>
                 {why}
                 {lowconf}
-              </div>
-              <div class="scale">
-                <div class="sc sc-minor {on['minor']}">
-                  <div class="sc-dot" style="background:#22c55e"></div>
-                  <div class="sc-name" style="color:#166534">Minor</div>
-                  <div class="sc-desc">Standard care</div>
-                </div>
-                <div class="sc sc-moderate {on['moderate']}">
-                  <div class="sc-dot" style="background:#fbbf24"></div>
-                  <div class="sc-name" style="color:#92400e">Moderate</div>
-                  <div class="sc-desc">Monitor closely</div>
-                </div>
-                <div class="sc sc-major {on['major']}">
-                  <div class="sc-dot" style="background:#e05252"></div>
-                  <div class="sc-name" style="color:#991b1b">Major</div>
-                  <div class="sc-desc">High risk</div>
-                </div>
               </div>
             </div>
             """, unsafe_allow_html=True)
