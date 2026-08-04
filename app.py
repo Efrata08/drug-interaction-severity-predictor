@@ -35,11 +35,11 @@ html, body, [class*="css"] { font-family: 'Inter', sans-serif; }
     display: flex; align-items: center; justify-content: center;
     font-size: 16px; color: #e05252; font-weight: 700;
 }
-.nav-title { font-size: 13px; font-weight: 500; color: #fff; margin: 0; }
-.nav-sub { font-size: 10px; color: #90b8d8; margin: 0; }
+.nav-title { font-size: 14.5px; font-weight: 500; color: #fff; margin: 0; }
+.nav-sub { font-size: 11px; color: #90b8d8; margin: 0; }
 .nav-badge {
     background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.15);
-    color: #cbd5e1; font-size: 10px; padding: 3px 10px;
+    color: #cbd5e1; font-size: 11px; padding: 3px 10px;
     border-radius: 20px; letter-spacing: .05em;
 }
 
@@ -54,13 +54,13 @@ html, body, [class*="css"] { font-family: 'Inter', sans-serif; }
     font-size: 50px; font-weight: 300; color: #1a3a5c;
     line-height: .95; font-family: Georgia, serif; opacity: .85;
 }
-.hero-eyebrow { font-size: 9px; letter-spacing: .15em; color: #94a3b8; margin-bottom: .3rem; }
-.hero-title { font-size: 20px; font-weight: 600; color: #1a3a5c; margin-bottom: .3rem; }
-.hero-desc { font-size: 11.5px; color: #64748b; line-height: 1.65; }
+.hero-eyebrow { font-size: 10px; letter-spacing: .15em; color: #94a3b8; margin-bottom: .3rem; }
+.hero-title { font-size: 23px; font-weight: 600; color: #1a3a5c; margin-bottom: .3rem; }
+.hero-desc { font-size: 13px; color: #64748b; line-height: 1.65; }
 
 /* SECTION LABEL */
 .sec-label {
-    font-size: 10px; letter-spacing: .12em; color: #94a3b8;
+    font-size: 11px; letter-spacing: .12em; color: #94a3b8;
     font-weight: 600; margin: 0 0 .5rem;
 }
 
@@ -88,21 +88,21 @@ html, body, [class*="css"] { font-family: 'Inter', sans-serif; }
 .ring-major { border-color: #e05252; }
 .ring-moderate { border-color: #fbbf24; }
 .ring-minor { border-color: #22c55e; }
-.res-label { font-size: 14.5px; font-weight: 600; margin-bottom: 3px; }
+.res-label { font-size: 16.5px; font-weight: 600; margin-bottom: 3px; }
 .lab-major { color: #991b1b; } .lab-moderate { color: #92400e; } .lab-minor { color: #166534; }
-.res-sub { font-size: 11.5px; color: #64748b; line-height: 1.5; }
+.res-sub { font-size: 12.5px; color: #64748b; line-height: 1.5; }
 .res-conf { margin-left: auto; text-align: right; }
-.conf-val { font-size: 23px; font-weight: 600; color: #1a3a5c; }
-.conf-lbl { font-size: 9px; color: #94a3b8; letter-spacing: .05em; }
+.conf-val { font-size: 26px; font-weight: 600; color: #1a3a5c; }
+.conf-lbl { font-size: 10px; color: #94a3b8; letter-spacing: .05em; }
 
 /* WHY PANEL */
 .why { background: #fff; padding: .95rem 1.35rem 1.1rem; }
-.why-lbl { font-size: 9.5px; letter-spacing: .12em; color: #94a3b8; font-weight: 600; margin-bottom: .5rem; }
-.why-row { font-size: 11.5px; color: #334155; line-height: 1.75; }
+.why-lbl { font-size: 10.5px; letter-spacing: .12em; color: #94a3b8; font-weight: 600; margin-bottom: .5rem; }
+.why-row { font-size: 13px; color: #334155; line-height: 1.75; }
 .why-row b { color: #1a3a5c; }
 .chip {
     display: inline-block; background: #eef2f7; color: #1a3a5c;
-    font-size: 10px; padding: 2px 8px; border-radius: 20px; margin-right: 4px;
+    font-size: 11px; padding: 2px 8px; border-radius: 20px; margin-right: 4px;
 }
 .chip-hot { background: #fef2f2; color: #991b1b; }
 
@@ -114,8 +114,8 @@ html, body, [class*="css"] { font-family: 'Inter', sans-serif; }
 .sc-moderate { background: #fffbeb; border-color: #fde68a; }
 .sc-major { background: #fef2f2; border-color: #fca5a5; }
 .sc-dot { width: 6px; height: 6px; border-radius: 50%; margin: 0 auto 5px; }
-.sc-name { font-size: 11px; font-weight: 600; margin-bottom: 2px; }
-.sc-desc { font-size: 9px; color: #94a3b8; }
+.sc-name { font-size: 12.5px; font-weight: 600; margin-bottom: 2px; }
+.sc-desc { font-size: 10px; color: #94a3b8; }
 .sc-on { outline: 2px solid #1a3a5c; outline-offset: 2px; }
 
 /* STATS */
@@ -123,12 +123,12 @@ html, body, [class*="css"] { font-family: 'Inter', sans-serif; }
          display: grid; grid-template-columns: repeat(4,1fr); margin-top: 1.25rem; }
 .stat { text-align: center; padding: .85rem .5rem; border-right: 1px solid #e2e8f0; }
 .stat:last-child { border-right: none; }
-.stat-val { font-size: 15px; font-weight: 600; color: #1a3a5c; }
-.stat-lbl { font-size: 9px; color: #94a3b8; }
+.stat-val { font-size: 17px; font-weight: 600; color: #1a3a5c; }
+.stat-lbl { font-size: 10px; color: #94a3b8; }
 
 /* DISCLAIMER */
 .disc { background: #fffbeb; border: 1px solid #fde68a; border-radius: 10px;
-        padding: .75rem 1rem; font-size: 10px; color: #78716c;
+        padding: .8rem 1rem; font-size: 11px; color: #78716c;
         line-height: 1.6; margin-top: 1rem; }
 .disc b { color: #92400e; }
 
@@ -136,7 +136,7 @@ html, body, [class*="css"] { font-family: 'Inter', sans-serif; }
 .stButton > button {
     background: #1a3a5c !important; color: #fff !important;
     border: none !important; border-radius: 10px !important;
-    padding: .7rem 1.5rem !important; font-size: 13px !important;
+    padding: .75rem 1.5rem !important; font-size: 14px !important;
     font-weight: 600 !important; width: 100% !important;
     letter-spacing: .02em !important;
 }
@@ -147,20 +147,60 @@ div[data-baseweb="select"] > div {
     background-color: #f8fafc !important;
     border: 1px solid #cbd5e1 !important;
     border-radius: 8px !important;
-    font-size: 13.5px !important;
+    font-size: 14.5px !important;
     color: #1a3a5c !important;
-    min-height: 42px !important;
+    min-height: 46px !important;
 }
 div[data-baseweb="select"] > div:hover { border-color: #1a3a5c !important; }
 div[data-baseweb="select"] svg { color: #64748b !important; }
 /* dropdown menu */
 ul[role="listbox"] { background: #fff !important; border: 1px solid #cbd5e1 !important; }
-li[role="option"] { font-size: 13px !important; color: #1a3a5c !important; }
+li[role="option"] { font-size: 14px !important; color: #1a3a5c !important; }
 li[role="option"]:hover { background: #eef2f7 !important; }
 
-label { font-size: 10px !important; letter-spacing: .1em !important;
+label { font-size: 11px !important; letter-spacing: .1em !important;
         color: #94a3b8 !important; font-weight: 600 !important; }
+
+/* ---- force light rendering regardless of the viewer's system theme ---- */
+div[data-baseweb="select"] > div,
+div[data-baseweb="select"] > div > div,
+div[data-baseweb="input"] > div {
+    background-color: #ffffff !important;
+    color: #1a3a5c !important;
+}
+div[data-baseweb="select"] div[aria-selected],
+div[data-baseweb="select"] span,
+div[data-baseweb="select"] input {
+    color: #1a3a5c !important;
+    -webkit-text-fill-color: #1a3a5c !important;
+}
+div[data-baseweb="popover"], div[data-baseweb="menu"],
+ul[role="listbox"] { background: #ffffff !important; }
+li[role="option"] { background: #ffffff !important; color: #1a3a5c !important; }
+li[role="option"]:hover,
+li[role="option"][aria-selected="true"] { background: #eef2f7 !important; }
+
+/* the "N medications available" caption was invisible on light grey */
+.stCaption, div[data-testid="stCaptionContainer"] p {
+    color: #64748b !important;
+    font-size: 12px !important;
+}
+
+/* focus ring in brand navy, not the default red/orange */
+div[data-baseweb="select"] > div:focus-within {
+    border-color: #1a3a5c !important;
+    box-shadow: 0 0 0 2px rgba(26,58,92,.14) !important;
+}
+
+/* low-confidence caution strip */
+.lowconf {
+    background: #fff7ed; border: 1px solid #fed7aa; border-radius: 8px;
+    padding: .6rem .85rem; font-size: 11.5px; color: #9a3412;
+    line-height: 1.55; margin-top: .7rem;
+}
+.lowconf b { color: #7c2d12; }
 </style>
+
 """, unsafe_allow_html=True)
 
 # ── Paths ─────────────────────────────────────────────────────
@@ -371,6 +411,15 @@ if go:
                        'documented CYP metabolism in DrugBank — this prediction relies on '
                        'drug class and mechanism text alone, so treat it with extra caution.</div>')
 
+            # three classes means chance is 33% — say so when we're near it
+            if conf < 50:
+                lowconf = ('<div class="lowconf"><b>Low confidence.</b> With three severity '
+                           'classes, random guessing scores 33%. At '
+                           f'{conf:.0f}% this prediction is weakly supported — treat it as '
+                           'a prompt to check a clinical reference, not an answer.</div>')
+            else:
+                lowconf = ''
+
             st.markdown(f"""
             <div class="res-wrap res-{k}">
               <div class="res-top res-top-{k}">
@@ -387,6 +436,7 @@ if go:
               <div class="why">
                 <div class="why-lbl">WHY THIS PREDICTION</div>
                 {why}
+                {lowconf}
               </div>
               <div class="scale">
                 <div class="sc sc-minor {on['minor']}">
